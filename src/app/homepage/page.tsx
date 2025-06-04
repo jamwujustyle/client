@@ -107,6 +107,7 @@ const HomePage = () => {
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Why Choose Eldorado
             </span>
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-300 h-1 bg-[linear-gradient(to_right,transparent_0%,theme(colors.cyan.400)_30%,theme(colors.purple.500)_70%,transparent_100%)] rounded-full opacity-40 shadow-[0_0_6px_theme(colors.cyan.400),_0_0_6px_theme(colors.purple.500)]"></div>
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -180,7 +181,7 @@ const HomePage = () => {
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Featured Products
             </span>
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-40 h-1 bg-[linear-gradient(to_right,transparent_0%,theme(colors.cyan.400)_30%,theme(colors.purple.500)_70%,transparent_100%)] rounded-full opacity-75 shadow-[0_0_6px_theme(colors.cyan.400),_0_0_6px_theme(colors.purple.500)]"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-200 h-1 bg-[linear-gradient(to_right,transparent_0%,theme(colors.cyan.400)_30%,theme(colors.purple.500)_70%,transparent_100%)] rounded-full opacity-75 shadow-[0_0_6px_theme(colors.cyan.400),_0_0_6px_theme(colors.purple.500)]"></div>
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">

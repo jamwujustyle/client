@@ -1,9 +1,34 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import { authService } from "@/services/auth";
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { RegisterRequestType, LoginRequestType } from "@/types/auth";
 const AuthPage = () => {
   const [activeTab, setActiveTab] = useState("login");
   const [glitchActive, setGlitchActive] = useState(false);
+
+  const loginForm = useForm<LoginRequestType>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+  const registerForm = useForm<RegisterRequestType>({
+    defaultValues: {
+      email: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  // const loginMutation = useMutation({
+  //   mutationFn: (payload: LoginRequestType) => authService.login(payload)
+  //   onSuccess: (data) =>{
+
+  //   }
+  // })
 
   useEffect(() => {
     // Random glitch effect for the background
