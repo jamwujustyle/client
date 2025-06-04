@@ -201,13 +201,16 @@ const HomePage = () => {
       {/* Featured Products Section */}
       <section className="relative py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center mb-16 uppercase tracking-wider">
+          <h2 className="relative text-3xl md:text-4xl font-black text-center mb-16 uppercase tracking-wider">
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Featured Products
             </span>
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-40 h-1 bg-[linear-gradient(to_right,transparent_0%,theme(colors.cyan.400)_30%,theme(colors.purple.500)_70%,transparent_100%)] rounded-full opacity-75 shadow-[0_0_6px_theme(colors.cyan.400),_0_0_6px_theme(colors.purple.500)]"></div>
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+            {" "}
+            {/* Added pt-4 to give space for the line */}
             {[
               {
                 image: "/images/2.jpg",
@@ -232,19 +235,16 @@ const HomePage = () => {
                 key={index}
                 className="group relative bg-gradient-to-br from-gray-900/50 to-black/50
                          border border-cyan-500/30 rounded-xl overflow-hidden
-                         hover:border-cyan-400/60 transform hover:scale-105 transition-all duration-300
-                         hover:shadow-[0_0_30px_rgba(0,255,255,0.2)]"
+                         hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,255,255,0.4),_0_0_8px_rgba(0,255,255,0.6)_inset]
+                         hover:-translate-y-2 transition-all duration-300"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative aspect-square">
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-transform duration-500"
                   />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent
-                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  ></div>
+                  {/* Removed the opacity overlay div as it's not in the target screenshot */}
                 </div>
 
                 <div className="p-6 space-y-3">
@@ -261,10 +261,10 @@ const HomePage = () => {
                   </div>
 
                   <button
-                    className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600
-                                   hover:from-cyan-400 hover:to-cyan-500 transition-all duration-300
-                                   rounded font-semibold text-sm uppercase tracking-wider
-                                   hover:shadow-[0_0_15px_rgba(0,255,255,0.5)]"
+                    className="w-full py-2 px-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white border-2 border-transparent
+                                   hover:bg-gradient-to-r hover:from-fuchsia-500 hover:to-cyan-500
+                                   hover:border-fuchsia-500 hover:text-white hover:shadow-[0_0_15px_rgba(217,70,239,0.5)] hover:-translate-y-1
+                                   transition-all duration-300 rounded font-semibold text-sm uppercase tracking-wider"
                   >
                     View Details
                   </button>
@@ -339,5 +339,4 @@ const HomePage = () => {
     </div>
   );
 };
-
 export default HomePage;
