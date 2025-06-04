@@ -1,8 +1,19 @@
-FROM node:24-alpine AS base
+FROM node:24-alpine
 
 WORKDIR /client
 
 
-COPY . /client
+COPY package.json yarn.lock* package-lock.json* ./
 
-RUN
+RUN \
+    if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci; \
+    else npm install; \
+    fi
+
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["yarn", "dev"]

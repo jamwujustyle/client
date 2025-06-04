@@ -31,9 +31,9 @@ This is the user-facing web application that provides the complete marketplace e
 ## 🛠️ Local Development
 
 1. **Set up environment variables**
-   ```bash
+```bash
    ./scripts/setup-env.sh
-    ```
+```
 2. **Install dependencies**
 ```bash
     yarn install
