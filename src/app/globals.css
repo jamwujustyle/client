@@ -135,3 +135,32 @@
 .animate-text-glow {
   animation: text-glow 2s ease-in-out infinite;
 }
+
+@layer utilities {
+  .text-animate-gradient-fill {
+    /* Ensure the element behaves like an inline element but can have block properties if needed */
+    @apply inline-block bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Explicitly set initial text color to be non-transparent.
+       This will be overridden by specific text color utilities like text-cyan-400,
+       but ensures a fallback if those are missing. */
+    color: inherit; /* Or specific initial color if all links should be the same initially */
+
+    /* Gradient is initially not visible (0% width) */
+    background-size: 0% 100%;
+    background-position: left center; /* Start animation from the left, vertically centered */
+
+    /* Smooth transition for the background size and color */
+    transition: background-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease-in-out;
+  }
+
+  .text-animate-gradient-fill:hover {
+    /* On hover, the text's actual color becomes transparent to reveal the gradient */
+    color: transparent !important; /* Use !important to ensure override */
+
+    /* The gradient background (clipped to text) expands to fill the text */
+    background-size: 100% 100%;
+  }
+}

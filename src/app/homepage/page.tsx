@@ -35,8 +35,7 @@ const HomePage = () => {
                 <a
                   key={item}
                   href="/auth"
-                  className="text-cyan-400 hover:text-purple-400 hover:drop-shadow-[0_0_5px_rgba(0,255,255,0.5)]
-                           transition-all duration-300 tracking-wider text-sm font-medium"
+                  className="text-animate-gradient-fill text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,255,255,0.5)] transition-all duration-300 tracking-wider text-sm font-medium"
                 >
                   {item}
                 </a>
@@ -316,9 +315,7 @@ const HomePage = () => {
                     <li key={linkIndex}>
                       <a
                         href="/auth"
-                        className="text-cyan-300/70 hover:text-purple-400
-                                           hover:drop-shadow-[0_0_5px_rgba(255,0,255,0.5)]
-                                           transition-all duration-300"
+                        className="text-animate-gradient-fill text-cyan-300/70 hover:drop-shadow-[0_0_5px_rgba(255,0,255,0.5)] transition-all duration-300 text-sm"
                       >
                         {link}
                       </a>
