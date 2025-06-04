@@ -4,9 +4,17 @@ interface RegisterRequestType {
     password: string
     confirmPassword: string
 }
+interface RegisterResponseType extends RegisterRequestType {
+    id: number;
+}
+
 interface LoginRequestType {
     email: string
     password: string
 }
+interface LoginResponseType {
+    access: string;
+    refresh: string;
+}
 
-export type { RegisterRequestType, LoginRequestType }
+export type { RegisterRequestType, RegisterResponseType, LoginRequestType, LoginResponseType }
